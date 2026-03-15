@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singular Sum – Collaboration / Blockchain / Rights & Compensation</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .list-checkmark { list-style: none; padding-left: 0; }
+    .list-checkmark li { position: relative; padding-left: 1.5rem; }
+    .list-checkmark li::before { content: '✓'; position: absolute; left: 0; color: rgb(37 99 235); font-weight: 600; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      #hero-video { display: none !important; }
+    }
+    .hero-static-fallback { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-static-fallback { display: block !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-6 focus:z-[60] focus:px-4 focus:py-2 focus:bg-slate-900 focus:text-white focus:rounded-lg focus:outline-none">
+    Skip to main content
+  </a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center">
+        <img src="assets/logo.png" alt="Singular Sum" class="h-10" />
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 -mr-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-slate-900 font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:rounded" aria-current="page">Home</a>
+        <a href="technology.html" class="text-slate-600 hover:text-slate-900 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:rounded">Technology</a>
+        <a href="contact.html" class="text-slate-600 hover:text-slate-900 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:rounded">Contact</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div class="flex flex-col gap-1 pt-4">
+        <a href="index.html" class="nav-link text-slate-900 font-semibold text-base py-3" aria-current="page">Home</a>
+        <a href="technology.html" class="nav-link text-slate-600 hover:text-slate-900 text-base font-medium py-3 transition-colors">Technology</a>
+        <a href="contact.html" class="nav-link text-slate-600 hover:text-slate-900 text-base font-medium py-3 transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col items-start justify-center px-6 pt-20 overflow-hidden bg-slate-200">
+    <div class="hero-static-fallback absolute inset-0 w-full h-full bg-gradient-to-br from-slate-100 to-slate-200"></div>
+    <video id="hero-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23e2e8f0' width='1920' height='1080'/%3E%3C/svg%3E">
+      <source src="assets/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-white/60"></div>
+    <div class="relative z-10 max-w-[960px] mx-auto text-left">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-full">
+        Where human creativity meets artificial intelligence
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mb-4">
+        Patented systems for collaboration, attribution, and ownership in the age of AI.
+      </p>
+      <p class="text-lg text-slate-500 max-w-2xl mb-12">
+        Singular Sum technologies enable humans, organizations, and intelligent systems to create together while ensuring every contribution can be tracked, attributed, and rewarded.
+      </p>
+      <a href="technology.html" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white text-base font-semibold rounded-lg hover:bg-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2">
+        Explore The Technology
+      </a>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <main id="main-content">
+    <section class="py-24 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">The age of intelligent creation has arrived</h2>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          Artificial intelligence is transforming how ideas are created, developed, and distributed. Today, innovation often happens through complex collaboration between people, machines, and data.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          But the systems that manage intellectual property were designed for a much simpler world — one where authorship was clear and contributors were few.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-4">In the modern creative economy, contributions can come from:</p>
+        <ul class="list-disc list-inside text-slate-600 text-lg space-y-2 mb-6">
+          <li>human creators</li>
+          <li>collaborative teams</li>
+          <li>AI systems</li>
+          <li>training data</li>
+          <li>distributed networks of participants</li>
+        </ul>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Without new frameworks for attribution and ownership, the value created by these collaborations becomes difficult to track and distribute fairly.
+        </p>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 border-t border-slate-200 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-start lg:gap-12">
+        <div class="max-w-3xl flex-1">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">A new infrastructure for intellectual property</h2>
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            Singular Sum's patented technologies provide the foundation for transparent collaboration in the AI era.
+          </p>
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            Our systems enable organizations to track creative contributions across complex collaborative environments including interactions between people, software systems, and intelligent models.
+          </p>
+          <p class="text-slate-600 text-lg leading-relaxed mb-4">Singular Sum technology enables:</p>
+          <ul class="list-checkmark text-slate-600 text-lg space-y-2 mb-6">
+            <li>collaborative contribution tracking</li>
+            <li>intelligent group formation</li>
+            <li>smart agreements and governance</li>
+            <li>attribution of creative inputs</li>
+            <li>royalty and investment tracking</li>
+            <li>automated distribution of value</li>
+          </ul>
+          <p class="text-slate-600 text-lg leading-relaxed mb-8">
+            By making collaboration transparent and traceable, Singular Sum ensures that the individuals and systems that contribute to innovation can be recognized and rewarded.
+          </p>
+          <a href="technology.html" class="inline-flex items-center justify-center px-6 py-3 border-2 border-slate-900 text-slate-900 text-base font-semibold rounded-lg hover:bg-slate-900 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+            Explore The Technology
+          </a>
+        </div>
+        <div class="mt-12 lg:mt-0 lg:flex-shrink-0 lg:w-[420px]">
+          <img id="attribution-engine-img" src="assets/attribution-engine.png" alt="The Singular Sum Attribution Engine – how human creators, training data, and AI models flow through to compensation distribution" class="w-full rounded-lg shadow-lg cursor-pointer hover:opacity-95 transition-opacity" tabindex="0" role="button" />
+        </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">The future company looks like a film production</h2>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          Modern organizations increasingly operate like film productions — assembling the right mix of talent, technology, and data to create value for a specific project.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          We call this the <strong class="font-semibold text-slate-900">Hollywood Effect</strong>. Teams form quickly around opportunities, collaborate intensely, and then reorganize for the next innovation cycle.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-4">In this model, companies must manage collaboration across:</p>
+        <ul class="list-disc list-inside text-slate-600 text-lg space-y-2 mb-6">
+          <li>creators</li>
+          <li>developers</li>
+          <li>investors</li>
+          <li>organizations</li>
+          <li>AI systems</li>
+          <li>data sources</li>
+        </ul>
+        <p class="text-slate-600 text-lg leading-relaxed mb-8">
+          Singular Sum provides the infrastructure that allows these collaborative networks to function with transparency, trust, and accountability.
+        </p>
+        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border-2 border-slate-900 text-slate-900 text-base font-semibold rounded-lg hover:bg-slate-900 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+          Contact Us
+        </a>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 border-t border-slate-200 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">In the AI era, every idea has a lineage</h2>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          As artificial intelligence becomes a partner in creativity and innovation, understanding the origins of ideas becomes increasingly important.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          Singular Sum technology enables the attribution of value back to the contributors who helped create it — including the human creators and data sources that power intelligent systems.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-4">This new framework makes it possible to:</p>
+        <ul class="list-checkmark text-slate-600 text-lg space-y-2 mb-6">
+          <li>identify contributors</li>
+          <li>manage rights and ownership</li>
+          <li>distribute compensation</li>
+          <li>maintain transparency in AI-assisted creation</li>
+        </ul>
+        <a href="technology.html" class="inline-flex items-center justify-center px-6 py-3 border-2 border-slate-900 text-slate-900 text-base font-semibold rounded-lg hover:bg-slate-900 hover:text-white transition-colors mt-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+          Explore The Technology
+        </a>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">Building the framework for the next generation of innovation</h2>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          The future of creativity will be collaborative, intelligent, and global.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+          Singular Sum's patented technologies are designed to ensure that as the world becomes more connected and AI-driven, the systems that manage ownership, attribution, and value distribution evolve with it.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-8">
+          Together, humans and intelligent systems can create more than ever before. Singular Sum ensures that everyone who contributes can share in the rewards.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="technology.html" class="inline-flex items-center justify-center px-6 py-3 border-2 border-slate-900 text-slate-900 text-base font-semibold rounded-lg hover:bg-slate-900 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+            Explore The Technology
+          </a>
+          <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border-2 border-slate-900 text-slate-900 text-base font-semibold rounded-lg hover:bg-slate-900 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+            Contact Us
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Singular Sum</h3>
+          <p class="text-slate-600 text-sm max-w-md">
+            Furthering the creative force of the human race through fair, open, and secure collaboration technology.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="index.html" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors">Home</a>
+          <a href="technology.html" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors">Technology</a>
+          <a href="contact.html" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors">Contact</a>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-200">
+        <p class="text-slate-500 text-sm">© 2012 – <span id="year"></span> Singular Sum. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Image lightbox -->
+  <div id="image-lightbox" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Expanded image view">
+    <button id="lightbox-close" class="absolute top-4 right-4 p-2 rounded-full text-white/90 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" aria-label="Close">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img id="lightbox-img" src="assets/attribution-engine.png" alt="The Singular Sum Attribution Engine – expanded view" class="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function() {
+      var heroVideo = document.getElementById('hero-video');
+      if (heroVideo) {
+        heroVideo.playbackRate = 0.5;
+      }
+    })();
+    (function() {
+      var img = document.getElementById('attribution-engine-img');
+      var lightbox = document.getElementById('image-lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      var closeBtn = document.getElementById('lightbox-close');
+      function openLightbox() {
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+      if (img && lightbox) {
+        img.addEventListener('click', openLightbox);
+        img.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); } });
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+      }
+    })();
+    (function() {
+      var toggle = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('menu-icon-open');
+      var iconClose = document.getElementById('menu-icon-close');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function() {
+          var isOpen = !menu.classList.contains('hidden');
+          menu.classList.toggle('hidden');
+          if (iconOpen) iconOpen.classList.toggle('hidden', !isOpen);
+          if (iconClose) iconClose.classList.toggle('hidden', isOpen);
+          toggle.setAttribute('aria-expanded', !isOpen);
+        });
+        menu.querySelectorAll('.nav-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.add('hidden');
+            if (iconOpen) iconOpen.classList.remove('hidden');
+            if (iconClose) iconClose.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
