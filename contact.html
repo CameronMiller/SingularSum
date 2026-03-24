@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Singular Sum</title>
+  <meta name="description" content="Where human creativity meets artificial intelligence. Get in touch with the Singular Sum team." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact – Singular Sum" />
+  <meta property="og:description" content="Where human creativity meets artificial intelligence. Get in touch with the Singular Sum team." />
+  <meta property="og:image" content="https://cameronmiller.github.io/SingularSum/assets/logo.png" />
+  <meta property="og:url" content="https://cameronmiller.github.io/SingularSum/contact.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact – Singular Sum" />
+  <meta name="twitter:description" content="Where human creativity meets artificial intelligence. Get in touch with the Singular Sum team." />
+  <meta name="twitter:image" content="https://cameronmiller.github.io/SingularSum/assets/logo.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-white font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-6 focus:z-[60] focus:px-4 focus:py-2 focus:bg-slate-900 focus:text-white focus:rounded-lg focus:outline-none">
+    Skip to main content
+  </a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center">
+        <img src="assets/logo.png" alt="Singular Sum" class="h-14 mix-blend-multiply" />
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 -mr-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-slate-600 hover:text-slate-900 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:rounded">Home</a>
+        <a href="contact.html" class="text-slate-900 font-semibold text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:rounded" aria-current="page">Contact</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-slate-200 bg-white">
+      <div class="flex flex-col gap-1 pt-4">
+        <a href="index.html" class="nav-link text-slate-600 hover:text-slate-900 text-base font-medium py-3 transition-colors">Home</a>
+        <a href="contact.html" class="nav-link text-slate-900 font-semibold text-base py-3" aria-current="page">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Content -->
+  <main id="main-content" class="pt-32">
+    <div class="w-full md:max-w-[80vw] lg:max-w-6xl md:mx-auto bg-gradient-to-b from-pink-200/30 via-blue-200/30 to-transparent rounded-t-[24px] min-h-screen">
+    <section class="w-full md:max-w-[80vw] md:mx-auto py-12 px-6 md:px-36 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Contact Us!</h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+        Get in touch with the Singular Sum team.
+      </p>
+    </section>
+    <div class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 gap-y-16 lg:items-start">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Send us a message</h2>
+          <div id="form-success" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+            Thank you for your message. We'll get back to you soon.
+          </div>
+          <!-- Replace YOUR_FORM_ID with your Formspree form ID. Add ?next=contact.html%3Fsuccess%3D1 to the action URL for redirect after submit. -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID?next=contact.html%3Fsuccess%3D1" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-900 mb-2">Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-slate-400 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-900 mb-2">Email</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-slate-400 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-slate-900 mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-slate-400 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2" placeholder="How can we help?" />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-900 mb-2">Message</label>
+              <textarea id="message" name="message" required rows="5" class="w-full px-4 py-3 border border-slate-400 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent focus-visible:ring-2 focus-visible:ring-offset-2 resize-y" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-br from-pink-400 to-blue-400 text-white text-base font-semibold rounded-lg hover:from-pink-500 hover:to-blue-500 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2">
+              Send message
+            </button>
+          </form>
+      </section>
+
+      <div class="space-y-16">
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-8">Contact Info</h2>
+          <div class="text-slate-600">
+            <p class="text-lg">
+              <a href="mailto:info@singularsum.com" class="text-slate-900 font-medium hover:underline">
+                info@singularsum.com
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-8">Inventors</h2>
+          <ul class="space-y-4">
+            <li>
+              <a href="https://www.linkedin.com/in/greg-piccionelli-30731222a/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+                Gregory A. Piccionelli
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/brandon-d-amore-04b182/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+                Brandon E. D'Amore
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/joel-tunedge/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+                Joel P. Thatcher
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Singular Sum</h3>
+          <p class="text-slate-600 text-sm max-w-md">
+            Furthering the creative force of the human race through fair, open, and secure collaboration technology.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="index.html" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors">Home</a>
+          <a href="contact.html" class="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors">Contact</a>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-200">
+        <p class="text-slate-500 text-sm">© 2012 – <span id="year"></span> Singular Sum. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.location.search.includes('success=1')) {
+      var successEl = document.getElementById('form-success');
+      var formEl = document.getElementById('contact-form');
+      if (successEl) successEl.classList.remove('hidden');
+      if (formEl) formEl.classList.add('hidden');
+    }
+    (function() {
+      var toggle = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('menu-icon-open');
+      var iconClose = document.getElementById('menu-icon-close');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function() {
+          var isOpen = !menu.classList.contains('hidden');
+          menu.classList.toggle('hidden');
+          if (iconOpen) iconOpen.classList.toggle('hidden', !isOpen);
+          if (iconClose) iconClose.classList.toggle('hidden', isOpen);
+          toggle.setAttribute('aria-expanded', !isOpen);
+        });
+        menu.querySelectorAll('.nav-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.add('hidden');
+            if (iconOpen) iconOpen.classList.remove('hidden');
+            if (iconClose) iconClose.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
