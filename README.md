@@ -1,6 +1,6 @@
 # Singular Sum
 
-A static website for [singularsum.com](http://singularsum.com/), inspired by Stripe's clean design.
+A static website for [singularsum.com](https://singularsum.com/), inspired by Stripe's clean design.
 
 ## Tech Stack
 
